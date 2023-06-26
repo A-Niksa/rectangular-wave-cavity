@@ -15,8 +15,8 @@ class Grid:
         self.init_meshgrid()
 
     def init_meshgrid(self):
-        x = np.zeros(self.rows)
-        y = np.zeros(self.cols)
+        x = np.linspace(0, 1.0, self.rows)
+        y = np.linspace(0, 1.0, self.cols)
         self.x_meshgrid, self.y_meshgrid = np.meshgrid(x, y)
 
     def get_x_meshgrid(self):

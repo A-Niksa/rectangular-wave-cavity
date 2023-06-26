@@ -21,3 +21,6 @@ class PhysicalSystem:
         new_grid = Grid(self.rows, self.cols)
         new_grid.set_value_grid(value_grid)
         self.grid_profile.append(new_grid)
+
+    def get_solution_length(self):
+        return len(self.grid_profile)

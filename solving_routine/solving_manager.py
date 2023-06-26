@@ -6,9 +6,9 @@ from solving_routine.constants import *
 
 
 class SolvingManager:
-    physical_sys = False
-    updater = False
-    initial_conditions_manager = False
+    physical_sys = None
+    updater = None
+    initial_conditions_manager = None
     n_steps = int(end_t / delta_t)
 
     def __init__(self):
@@ -25,3 +25,6 @@ class SolvingManager:
             second_prev_grid = self.physical_sys.get_grid_by_index(i-2)
             value_grid = self.updater.update(grid, first_prev_grid, second_prev_grid)
             self.physical_sys.append_value_grid(value_grid)
+
+    def get_solution(self):
+        return self.physical_sys
